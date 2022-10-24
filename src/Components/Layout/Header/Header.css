@@ -1,0 +1,19 @@
+.nav-title {
+    color: white;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.nav-title:hover {
+    color: rgb(238, 236, 236);
+}
+
+.nav-items {
+    font-size: 20px;
+    font-weight: 10px;
+    color: white;
+}
+
+.nav-items:hover {
+    color: orange;
+}
