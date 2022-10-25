@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Leftside = () => {
@@ -11,15 +12,16 @@ const Leftside = () => {
             .then(data => setCategories(data))
     }, [])
     return (
-        <div>
-            <h2>Course Categories</h2>
-            {
-                categories.map(category => <h5
-                    key={category.id}>
-                    <Link style={{ textDecoration: 'none' }}
-                        to={`/course-categories/${category.id}`} >{category.name}</Link>
-                </h5>)
-            }
+        <div className='background'>
+            <Container>
+                <h2 className='mt-'>Course Categories</h2>
+                {
+                    categories.map(category => <h5
+                        key={category.id}>
+                        <Link className='category-list' to={`/course-categories/${category.id}`} >{category.name}</Link>
+                    </h5>)
+                }
+            </Container>
         </div>
     );
 };

@@ -6,11 +6,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import img from '../../../Assets/logo/1666650716147.png'
+import { FaUserCircle } from "react-icons/fa";
 
 
 const Header = () => {
     return (
-        <Navbar className='mb-3' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className='' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand href="#home">
                     <img
@@ -25,11 +26,10 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link className='nav-items' to='/course-categories'>Courses</Nav.Link>
-                        <Nav.Link className='nav-items' to="">Price</Nav.Link>
-                        <Nav.Link className='nav-items' to="">Blog</Nav.Link>
-                        <Nav.Link className='nav-items' to="">FAQ</Nav.Link>
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                        <Link className='nav-items' to='/course-categories'>Courses</Link>
+                        <Link className='nav-items' to="">Blog</Link>
+                        <Link className='nav-items' to="">FAQ</Link>
+                        {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">
                                 Another action
@@ -39,13 +39,12 @@ const Header = () => {
                             <NavDropdown.Item href="#action/3.4">
                                 Separated link
                             </NavDropdown.Item>
-                        </NavDropdown>
+                        </NavDropdown> */}
                     </Nav>
-                    <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
+                    <Nav className='nav-items userIcon'>
+                        <Link className='userIcon nav-items' >More deets</Link>
+                        <Link className='userIcon nav-items' to='/login'>Login</Link>
+                        <Link to='/login'> <FaUserCircle className='userIcon nav-items'></FaUserCircle> </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

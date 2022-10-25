@@ -5,15 +5,50 @@
 }
 
 .nav-title:hover {
-    color: rgb(238, 236, 236);
+    color: orange;
 }
 
 .nav-items {
     font-size: 20px;
     font-weight: 10px;
     color: white;
+    text-decoration: none;
+    margin-right: 10px;
 }
 
 .nav-items:hover {
     color: orange;
+}
+
+.userIcon {
+    color: white;
+}
+
+.category-list {
+    text-decoration: none;
+    color: rgb(37, 0, 70);
+}
+
+.category-list:hover {
+    color: orange;
+}
+
+.bg {
+    background-color: rgb(2, 0, 26);
+    padding-bottom: 100%;
+}
+
+.login-container {
+    margin: 0px 40px;
+    padding-top: 30px;
+}
+
+.background {
+    background-color: rgb(235, 235, 235);
+    padding-bottom: 100%;
+}
+
+.loginIcons {
+    color: white;
+    margin-left: 10px;
 }
