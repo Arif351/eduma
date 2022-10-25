@@ -25,7 +25,7 @@ const Login = () => {
                     <div className='mt-4 d-lg-flex align-items-center justify-content-center gap-3'>
                         <h5>Login with</h5>
                         <Button variant="outline-primary"> <FaGoogle className='me-2'></FaGoogle> Google</Button>{' '}
-                        <Button variant="outline-primary"> <FaGithub className='me-2'></FaGithub> Github</Button>{' '}
+                        <Button variant="outline-secondary"> <FaGithub className='me-2'></FaGithub> Github</Button>{' '}
                     </div>
                     <h6 className='text-white mt-3 text-center justify-content-center mt-4'>New in this website? <Link style={{ textDecoration: 'none' }} to='/registration'>Register Now</Link> </h6>
                 </Form>

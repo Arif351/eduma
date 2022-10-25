@@ -17,10 +17,13 @@ const Leftside = () => {
                 <h2 className='mt-'>Course Categories</h2>
                 {
                     categories.map(category => <h5
-                        key={category.id}>
-                        <Link className='category-list' to={`/course-categories/${category.id}`} >{category.name}</Link>
+                        key={category._id}>
+                        <Link className='category-list' to={`/category/${category.id}`}>
+                            {category.name}</Link>
                     </h5>)
                 }
+                {/* to={`/course-categories/${category.id}`} */}
+
             </Container>
         </div>
     );
