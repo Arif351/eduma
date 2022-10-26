@@ -8,13 +8,13 @@ import Card from './Card';
 const CourseCategory = () => {
     const coursesData = useLoaderData()
     return (
-        <div>
+        <div className='background'>
             <Container>
                 <Row>
-                    <Col lg="5">
+                    <Col lg="6">
                         <Leftside></Leftside>
                     </Col>
-                    <Col lg="7">
+                    <Col lg="6">
                         {
                             coursesData.map(course => <RightSide
                                 key={course.id}

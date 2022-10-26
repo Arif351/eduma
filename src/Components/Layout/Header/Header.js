@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,9 +7,19 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import img from '../../../Assets/logo/1666650716147.png'
 import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from '../../Context/AuthProvider';
+import { Button, Image } from 'react-bootstrap';
 
 
 const Header = () => {
+
+    const { user, logout } = useContext(AuthContext);
+    const handleLogout = () => {
+        logout()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <Navbar className='' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
@@ -29,26 +39,46 @@ const Header = () => {
                         <Link className='nav-items' to='/course-categories'>Courses</Link>
                         <Link className='nav-items' to="">Blog</Link>
                         <Link className='nav-items' to="">FAQ</Link>
-                        {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown> */}
                     </Nav>
-                    <Nav className='nav-items userIcon'>
-                        <Link className='userIcon nav-items' >More deets</Link>
-                        <Link className='userIcon nav-items' to='/login'>Login</Link>
-                        <Link to='/login'> <FaUserCircle className='userIcon nav-items'></FaUserCircle> </Link>
+                    {/* <Nav className='nav-items userIcon'>
+                        <Link className='userIcon nav-items text-white'></Link>
+
+                        {
+                            user && user?.photoURL ? <Image style={{ height: "40px" }} roundedCircle src={user.photoURL}></Image> &&
+                                <Link className='userIcon nav-items'>
+                                    <Button variant="secondary">Logout</Button>{' '}</Link> :
+
+                                <div>
+                                    <Link className='userIcon nav-items' to='/login'>
+                                        <Button variant="secondary">Login</Button>{' '}</Link>
+                                    <FaUserCircle className='userIcon nav-items'></FaUserCircle>
+                                </div>
+                        }
+
+                    </Nav> */}
+                    <Nav>
+                        <Nav.Link href="#deets">
+                            {
+                                user && user.uid ?
+                                    <Link className='userIcon nav-items' to='/'>
+                                        <Button onClick={handleLogout} variant="secondary">Logout</Button> </Link>
+                                    :
+                                    <Link className='userIcon nav-items' to='/login'>
+                                        <Button variant="secondary">Login</Button> </Link>
+                            }
+
+                        </Nav.Link>
+                        <Nav.Link>
+                            {
+                                user?.photoURL ? <Image style={{ height: "40px" }} roundedCircle src={user.photoURL} data-toggle="tooltip" data-placement="bottom" title={user.displayName}></Image> :
+                                    <FaUserCircle className='userIcon nav-items'></FaUserCircle>
+                            }
+
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar >
     );
 };
 

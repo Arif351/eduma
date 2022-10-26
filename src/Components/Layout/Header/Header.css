@@ -25,11 +25,23 @@
 }
 
 .category-list {
-    text-decoration: none;
-    color: rgb(37, 0, 70);
+    background-color: rgb(14, 0, 92);
+    border: 1px solid rgb(151, 40, 255);
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin: 15px 0px;
 }
 
 .category-list:hover {
+    background-color: rgb(8, 1, 53);
+}
+
+.category-list2 {
+    text-decoration: none;
+    color: white;
+}
+
+.category-list2:hover {
     color: orange;
 }
 
@@ -44,11 +56,16 @@
 }
 
 .background {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(17, 7, 26);
     padding-bottom: 100%;
 }
 
 .loginIcons {
     color: white;
     margin-left: 10px;
+}
+
+.mentor-img {
+    width: 50px;
+    border-radius: 50%;
 }

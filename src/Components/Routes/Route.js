@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import CourseCategory from "../CourseCategory/CourseCategory";
 import Home from "../Home/Home";
-import Courses from "../Layout/Courses";
 import Main from "../Layout/Main/Main";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
+import DetailCourse from "../Share/DetailCourse";
 import Leftside from "../Share/Leftside";
 import RightSide from "../Share/RightSide";
 
@@ -15,18 +15,18 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>,
-                // loader: () => fetch('http://localhost:5000/allCourses')
+                element: <Home></Home>
             },
 
             {
                 path: '/course-categories',
                 element: <Leftside></Leftside>
             },
-            // {
-            //     path: '/course-categories',
-            //     element: <RightSide></RightSide>
-            // },
+            {
+                path: '/courseDetails/:id',
+                element: <DetailCourse></DetailCourse>,
+                loader: ({ params }) => fetch(`http://localhost:5000/courseDetails/${params.id}`)
+            },
             {
                 path: '/category/:id',
                 element: <CourseCategory></CourseCategory>,
