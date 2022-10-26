@@ -6,6 +6,7 @@ import Main from "../Layout/Main/Main";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
 import Leftside from "../Share/Leftside";
+import RightSide from "../Share/RightSide";
 
 export const routes = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ export const routes = createBrowserRouter([
                 path: '/course-categories',
                 element: <Leftside></Leftside>
             },
+            // {
+            //     path: '/course-categories',
+            //     element: <RightSide></RightSide>
+            // },
             {
                 path: '/category/:id',
                 element: <CourseCategory></CourseCategory>,
