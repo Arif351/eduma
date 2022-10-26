@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -17,9 +17,21 @@ const Login = () => {
     const from = location.state?.privateRoute?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
         LoginProvider(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const handleGithubLogin = () => {
+        LoginProvider(githubProvider)
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -46,7 +58,6 @@ const Login = () => {
             .catch(error => setError(error.message))
     }
 
-
     return (
         <div className='bg'>
             <Row>
@@ -72,7 +83,7 @@ const Login = () => {
                             <div className='mt-5 d-lg-flex align-items-center justify-content-center gap-3'>
                                 <h5>Login with</h5>
                                 <Button onClick={handleGoogleSignIn} variant="outline-primary" className='me-4'> <FaGoogle className='me-2'></FaGoogle> Google</Button>{' '}
-                                <Button variant="outline-secondary"> <FaGithub className='me-2'></FaGithub> Github</Button>{' '}
+                                <Button onClick={handleGithubLogin} variant="outline-secondary"> <FaGithub className='me-2'></FaGithub> Github</Button>{' '}
                             </div>
                             <h6 className='text-white mt-3 text-center justify-content-center mt-4'>New in this website? <Link style={{ textDecoration: 'none' }} to='/registration'>Register Now</Link> </h6>
                         </Form>

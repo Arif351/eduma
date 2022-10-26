@@ -4,9 +4,9 @@ import Home from "../Home/Home";
 import Main from "../Layout/Main/Main";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
+import Conditions from "../Share/Conditions";
 import DetailCourse from "../Share/DetailCourse";
 import Leftside from "../Share/Leftside";
-import RightSide from "../Share/RightSide";
 import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
@@ -40,6 +40,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/registration',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/conditions',
+                element: <Conditions></Conditions>
             }
         ]
     }
