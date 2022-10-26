@@ -9,11 +9,13 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (presentUser) => {
             console.log('changing', presentUser);
             setUser(presentUser);
+            setLoading(false);
         });
         return () => {
             unsubscribe();
@@ -21,22 +23,26 @@ const AuthProvider = ({ children }) => {
     }, [])
 
     const LoginProvider = (provider) => {
-        return signInWithPopup(auth, provider)
+        setLoading(true);
+        return signInWithPopup(auth, provider);
     }
 
     const newUser = (email, password) => {
-        return createUserWithEmailAndPassword(auth, email, password)
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const signIn = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     const logout = () => {
-        return signOut(auth)
+        setLoading(true);
+        return signOut(auth);
     }
 
-    const authInfo = { user, LoginProvider, logout, newUser, signIn }
+    const authInfo = { user, LoginProvider, logout, newUser, signIn, loading }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
