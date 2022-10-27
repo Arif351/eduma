@@ -37,25 +37,9 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Link className='nav-items' to='/course-categories'>Courses</Link>
-                        <Link className='nav-items' to="">Blog</Link>
-                        <Link className='nav-items' to="">FAQ</Link>
+                        <Link className='nav-items' to='/blog'>Blog</Link>
                     </Nav>
-                    {/* <Nav className='nav-items userIcon'>
-                        <Link className='userIcon nav-items text-white'></Link>
 
-                        {
-                            user && user?.photoURL ? <Image style={{ height: "40px" }} roundedCircle src={user.photoURL}></Image> &&
-                                <Link className='userIcon nav-items'>
-                                    <Button variant="secondary">Logout</Button>{' '}</Link> :
-
-                                <div>
-                                    <Link className='userIcon nav-items' to='/login'>
-                                        <Button variant="secondary">Login</Button>{' '}</Link>
-                                    <FaUserCircle className='userIcon nav-items'></FaUserCircle>
-                                </div>
-                        }
-
-                    </Nav> */}
                     <Nav>
                         <Nav.Link href="#deets">
                             {

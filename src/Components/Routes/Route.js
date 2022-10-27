@@ -6,6 +6,7 @@ import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
 import Conditions from "../Share/Conditions";
 import DetailCourse from "../Share/DetailCourse";
+import Faq from "../Share/FAQ/Faq";
 import Leftside from "../Share/Leftside";
 import PrivateRoute from "./PrivateRoute";
 
@@ -26,12 +27,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/courseDetails/:id',
                 element: <PrivateRoute><DetailCourse></DetailCourse></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courseDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-inky-ten.vercel.app/courseDetails/${params.id}`)
             },
             {
                 path: '/category/:id',
                 element: <CourseCategory></CourseCategory>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-inky-ten.vercel.app/category/${params.id}`)
             },
             {
                 path: '/login',
@@ -44,6 +45,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/conditions',
                 element: <Conditions></Conditions>
+            },
+            {
+                path: '/blog',
+                element: <Faq></Faq>
             }
         ]
     }
