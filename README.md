@@ -1,4 +1,12 @@
-<!-- https://assignment-10-62715.web.app/ -->
+<!-- 
+///Bullet points of this project//
+----------------------
+1. To create a REACT app and provide user authentcation installef react app, firebase.
+2. Make a basic structure base on requirements.
+3. Server and client Github repository initialized and code pushed.
+4. Server site conneted to client by Vercel.
+5. Deployed on firebase.
+ -------------------------------------->
 
 # Getting Started with Create React App
 

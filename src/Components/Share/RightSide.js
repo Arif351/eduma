@@ -10,9 +10,10 @@ const RightSide = ({ course }) => {
         <div>
             <Container lg="">
                 <Card className="mb-5 xs={1} md={2}" >
-                    <Card.Header> <h3 className='text-center'>{title}</h3> </Card.Header>
                     <Card.Img className='w-100' variant="top" src={coverImg} />
                     <Card.Body>
+                        <Card.Title><h3 className='text-center'>{title}</h3></Card.Title>
+                        <hr />
                         <Card.Title>{about}</Card.Title>
                         <Card.Text>
                             {details.length > 250 ?

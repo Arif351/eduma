@@ -9,6 +9,7 @@ import Conditions from "../Share/Conditions";
 import DetailCourse from "../Share/DetailCourse";
 import Faq from "../Share/FAQ/Faq";
 import Leftside from "../Share/Leftside";
+import NotFound from "../Share/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
@@ -54,7 +55,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/*',
+                element: <NotFound></NotFound>
             }
         ]
+
     }
 ])

@@ -4,7 +4,6 @@ import { useLoaderData } from 'react-router-dom';
 import Footer from '../Share/Footer/Footer';
 import Leftside from '../Share/Leftside';
 import RightSide from '../Share/RightSide';
-import Card from './Card';
 
 const CourseCategory = () => {
     const coursesData = useLoaderData()
