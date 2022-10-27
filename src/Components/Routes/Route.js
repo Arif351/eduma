@@ -29,12 +29,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/courseDetails/:id',
                 element: <PrivateRoute><DetailCourse></DetailCourse></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://server-arif351.vercel.app/courseDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-inky-ten.vercel.app/courseDetails/${params.id}`)
             },
             {
                 path: '/category/:id',
                 element: <CourseCategory></CourseCategory>,
-                loader: ({ params }) => fetch(`https://server-arif351.vercel.app/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-inky-ten.vercel.app/category/${params.id}`)
             },
             {
                 path: '/login',
