@@ -72,7 +72,7 @@
 
 .fqa {
     background-color: rgb(12, 1, 31);
-    padding-bottom: 100%;
+    padding-bottom: 10%;
     padding-top: 80px;
 }
 
@@ -81,4 +81,21 @@
     font-family: 'Times New Roman', Times, serif;
     padding-bottom: 15px;
     text-align: center;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding-bottom: 5%;
+    padding-top: 20px;
+    border-top: 1px solid antiquewhite;
+}
+
+.contact {
+    text-decoration: none;
+    color: azure;
+}
+
+.contact:hover {
+    color: rgb(149, 169, 255);
 }

@@ -4,6 +4,7 @@ import Home from "../Home/Home";
 import Main from "../Layout/Main/Main";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
+import About from "../Share/About/About";
 import Conditions from "../Share/Conditions";
 import DetailCourse from "../Share/DetailCourse";
 import Faq from "../Share/FAQ/Faq";
@@ -49,6 +50,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Faq></Faq>
+            },
+            {
+                path: '/about',
+                element: <About></About>
             }
         ]
     }

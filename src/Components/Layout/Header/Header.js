@@ -9,6 +9,7 @@ import img from '../../../Assets/logo/1666650716147.png'
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from '../../Context/AuthProvider';
 import { Button, Image } from 'react-bootstrap';
+import Toggle from '../../Share/Toggle/Toggle';
 
 
 const Header = () => {
@@ -38,8 +39,9 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Link className='nav-items' to='/course-categories'>Courses</Link>
                         <Link className='nav-items' to='/blog'>Blog</Link>
+                        <Link className='nav-items' to='/about'>About</Link>
+                        <Toggle></Toggle>
                     </Nav>
-
                     <Nav>
                         <Nav.Link href="#deets">
                             {
@@ -50,14 +52,12 @@ const Header = () => {
                                     <Link className='userIcon nav-items' to='/login'>
                                         <Button variant="secondary">Login</Button> </Link>
                             }
-
                         </Nav.Link>
                         <Nav.Link>
                             {
                                 user?.photoURL ? <Image style={{ height: "40px" }} roundedCircle src={user.photoURL} data-toggle="tooltip" data-placement="bottom" title={user.displayName}></Image> :
                                     <FaUserCircle className='userIcon nav-items'></FaUserCircle>
                             }
-
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
